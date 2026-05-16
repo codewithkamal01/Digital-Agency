@@ -95,7 +95,7 @@ export const teamData = [
   {
     name: "Siddharth Ghosh",
     title: "Project Manager",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
+    image: SGSir,
   },
   {
     name: "Priya Iyer",
