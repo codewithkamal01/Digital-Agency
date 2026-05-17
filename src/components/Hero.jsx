@@ -43,20 +43,36 @@ function Hero() {
         Creating meaningful connections and turning big ideas into interactive
         digital experiences.
       </motion.p>
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 1.6 }}
-        viewport={{ once: true }}
-        className="relative"
-      >
-        <img src={assets.hero_img} alt="" className=" w-full max-w-6xl " />
-        <img
+      <div className="relative">
+        {/* Background image */}
+        <motion.img
           src={assets.bgImage1}
           alt=""
-          className="absolute -top-40 -right-40 sm:-top-100 sm:-right-70 -z-1 dark:hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          viewport={{ once: true }}
+          className="
+      absolute
+      -top-40
+      -right-40
+      sm:-top-100
+      sm:-right-70
+      -z-10
+      dark:hidden
+    "
         />
-      </motion.div>
+
+        {/* Animated hero image only */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 1.6 }}
+          viewport={{ once: true }}
+        >
+          <img src={assets.hero_img} alt="" className="w-full max-w-6xl" />
+        </motion.div>
+      </div>
     </div>
   );
 }
