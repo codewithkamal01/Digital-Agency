@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import Title from "./Title";
+import Title from "../Title";
 
 function ProcessTimeline() {
   const containerRef = useRef(null);

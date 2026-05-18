@@ -30,6 +30,12 @@ import sun_icon from "./sun_icon.svg";
 import moon_icon from "./moon_icon.svg";
 import SGSir from "../assets/siddharthSir.jpg";
 import Creyotech from "../assets/Creyotech.png";
+import msme from "../assets/msme.webp";
+import iso from "../assets/iso.webp";
+import iso2 from "../assets/iso-2.webp";
+import nsic from "../assets/nsic.webp";
+import cmmi from "../assets/cmmi.webp";
+import meity from "../assets/Meity.webp";
 
 export const company_logos = [
   microsoft_logo,
@@ -43,6 +49,12 @@ export const company_logos = [
 const assets = {
   Creyotech,
   logo,
+  msme,
+  iso,
+  iso2,
+  nsic,
+  meity,
+  cmmi,
   arrow_icon,
   group_profile,
   bgImage1,
