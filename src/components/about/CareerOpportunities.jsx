@@ -178,7 +178,8 @@ function CareerOpportunities() {
                 src={careerImg}
                 alt="Career Opportunities"
                 className="
-                  h-[550px]
+                h-[430px]
+                  sm:h-[550px]
                   w-full
                   rounded-3xl
                   object-cover

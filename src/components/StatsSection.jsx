@@ -44,7 +44,7 @@ const statsData = [
 
 function StatsSection() {
   return (
-    <section className="relative overflow-hidden py-24 px-24">
+    <section className="relative overflow-hidden py-22 px-5 sm:px-24">
       {/* Glow */}
       <div
         className="
@@ -149,7 +149,7 @@ function StatsSection() {
           </div>
 
           {/* Stats Grid */}
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {statsData.map((item, index) => {
               const Icon = item.icon;
 
