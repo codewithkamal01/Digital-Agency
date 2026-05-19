@@ -10,14 +10,14 @@ function Teams() {
       whileInView="visible"
       viewport={{ once: true }}
       transition={{ staggerChildren: 0.2 }}
-      className="flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-text-primary dark:text-text-light"
+      className="flex flex-col items-center text-center gap-7 px-4 sm:px-12 lg:px-24 xl:px-40 pt-30 text-text-primary dark:text-text-light"
     >
       <Title
-        title="Meet the team"
+        title="Meet The Leadership Team"
         desc="A passionate team of digital experts dedicated to your brands success."
       />
 
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-5">
         {teamData.map((team, index) => (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,11 @@ function Teams() {
             key={index}
             className="flex max-sm:flex-col items-center gap-5 p-4 rounded-xl border border-border-light dark:border-border-dark bg-bg-light dark:bg-secondary shadow-xl shadow-soft dark:shadow-text-light/5 hover:scale-103 transition-all duration-400"
           >
-            <img src={team.image} className="w-12 h-12 object-top rounded-full" alt="" />
+            <img
+              src={team.image}
+              className="w-16 h-16 object-top rounded-full"
+              alt=""
+            />
             <div>
               <h3 className="font-bold text-sm">{team.name}</h3>
               <h3 className="text-xs opacity-60">{team.title}</h3>

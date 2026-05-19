@@ -87,8 +87,8 @@ function CustomerReviewsSection() {
       className="
         relative
         overflow-hidden
-        px-4
-        py-24
+        px-26
+        py-20
         sm:px-8
         lg:px-16
         xl:px-24
@@ -201,7 +201,7 @@ function CustomerReviewsSection() {
                 group
                 relative
                 overflow-hidden
-                rounded-[2rem]
+                rounded-4xl
                 border
                 border-primary/10
                 bg-white/50
@@ -239,7 +239,8 @@ function CustomerReviewsSection() {
                   mx-auto
                   flex
                   h-28
-                  w-full
+                  w-34
+                  sm:w-full
                   items-center
                   justify-center
                   overflow-hidden
@@ -247,7 +248,7 @@ function CustomerReviewsSection() {
                   bg-white
                   p-4
                   shadow-sm
-                  dark:bg-white/90
+                  dark:bg-secondary
                 "
               >
                 <img
@@ -256,7 +257,7 @@ function CustomerReviewsSection() {
                   className="
                     max-h-16
                     w-auto
-                    object-contain
+                    object-cover
                   "
                 />
               </div>

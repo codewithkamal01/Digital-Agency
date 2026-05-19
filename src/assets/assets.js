@@ -72,6 +72,41 @@ import tl3 from "../assets/Time Line/3.jpg";
 import tl4 from "../assets/Time Line/4.jpg";
 import formation from "../assets/TheStory/formation.jpeg";
 import AboutHero from "../assets/AboutHero.jpeg";
+import Accreditations from "../assets/Excellence/Accreditations.png";
+import Client from "../assets/Excellence/Client.png";
+import Development from "../assets/Excellence/Development.png";
+import Project from "../assets/Excellence/P1.png";
+import Maintainence from "../assets/Excellence/Maintainence.png";
+import ODC from "../assets/Excellence/ODC.png";
+import Forbes from "../assets/Excellence/Forbes.png";
+import TNM from "../assets/Excellence/TNM.png";
+import gallery1 from "./gallery/gallery1.jpg";
+import gallery2 from "./gallery/gallery2.jpg";
+import gallery3 from "./gallery/gallery3.jpg";
+import gallery4 from "./gallery/gallery4.jpg";
+import gallery5 from "./gallery/gallery5.jpg";
+import gallery6 from "./gallery/gallery6.jpg";
+import gallery7 from "./gallery/gallery7.jpg";
+import gallery8 from "./gallery/gallery8.png";
+import gallery9 from "./gallery/gallery9.png";
+import gallery10 from "./gallery/gallery10.png";
+import gallery11 from "./gallery/gallery11.png";
+import gallery12 from "./gallery/gallery12.png";
+
+export const gallery_images = [
+  gallery1,
+  gallery2,
+  gallery12,
+  gallery3,
+  gallery7,
+  gallery4,
+  gallery10,
+  gallery5,
+  gallery6,
+  gallery11,
+  gallery8,
+  gallery9,
+];
 
 export const company_logos = [
   google_analytics,
@@ -130,6 +165,16 @@ const assets = {
   cmmi,
   MakeInIndia,
   StartUpIndia,
+  // excellence
+  Project,
+  Client,
+  Forbes,
+  TNM,
+  Maintainence,
+  ODC,
+  Accreditations,
+  Development,
+
   arrow_icon,
   group_profile,
   bgImage1,
@@ -187,15 +232,5 @@ export const teamData = [
     name: "Emily Parker",
     title: "Content marketer",
     image: "https://randomuser.me/api/portraits/women/11.jpg",
-  },
-  {
-    name: "Megan Brooks",
-    title: "Performance manager",
-    image: "https://randomuser.me/api/portraits/women/12.jpg",
-  },
-  {
-    name: "Amber Foster",
-    title: "Senior writer",
-    image: "https://randomuser.me/api/portraits/women/14.jpg",
   },
 ];
