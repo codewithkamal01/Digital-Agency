@@ -91,7 +91,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 1.6 }}
           viewport={{ once: true }}
         >
-          <img src={assets.hero_img} alt="" className="w-full max-w-6xl" />
+          <img src={assets.tl3} alt="" className="w-full max-w-6xl rounded-4xl" />
         </motion.div>
       </div>
     </div>

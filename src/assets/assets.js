@@ -70,6 +70,8 @@ import tl1 from "../assets/Time Line/1.jpg";
 import tl2 from "../assets/Time Line/2.jpg";
 import tl3 from "../assets/Time Line/3.jpg";
 import tl4 from "../assets/Time Line/4.jpg";
+import formation from "../assets/TheStory/formation.jpeg";
+import AboutHero from "../assets/AboutHero.jpeg";
 
 export const company_logos = [
   google_analytics,
@@ -111,6 +113,12 @@ export const cust_reviews = [
 export const timeLine = [tl1, tl2, tl3, tl4];
 
 const assets = {
+  tl1,
+  tl2,
+  tl3,
+  tl4,
+  formation,
+  AboutHero,
   Creyotech,
   Creyotech_dark,
   logo,

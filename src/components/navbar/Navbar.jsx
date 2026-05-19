@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import assets from "../../assets/assets";
-
 import ThemeToggle from "../ThemeToggle";
 import NavLinks from "./NavLinks";
 import NavbarCTA from "./NavbarCTA";
 import MobileSidebar from "./MobileSidebar";
+import { NavLink } from "react-router-dom";
 
 function Navbar({ theme, setTheme }) {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
+
+  const handleScrollTop = () => {
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+  };
 
   return (
     <motion.div
@@ -40,12 +45,11 @@ function Navbar({ theme, setTheme }) {
     >
       {/* Logo */}
       <div className="flex items-center gap-1 font-bold">
-        <img src={ theme === 'dark' ? assets.Creyotech_dark : assets.Creyotech} className="w-26 sm:w-30 rounded" alt="" />
-
-        {/* <h1 className="text-lg dark:text-text-light sm:text-xl">
-          Digi
-          <span className="text-primary">.Agency</span>
-        </h1> */}
+        <img
+          src={theme === "dark" ? assets.Creyotech_dark : assets.Creyotech}
+          className="w-26 sm:w-30 rounded"
+          alt=""
+        />
       </div>
 
       {/* Nav Container */}
@@ -74,30 +78,37 @@ function Navbar({ theme, setTheme }) {
       >
         {/* Desktop Nav */}
         <div className="hidden items-center gap-5 sm:flex">
-          <a
-            href="#home"
-            className="
+          <NavLink
+            to="/"
+            onClick={handleScrollTop}
+            className={({ isActive }) =>
+              `
         transition-all
         duration-300
         hover:text-primary
-      "
+        ${isActive ? "text-primary" : ""}
+      `
+            }
           >
             Home
-          </a>
+          </NavLink>
 
           <NavLinks activeMenu={activeMenu} setActiveMenu={setActiveMenu} />
 
-          <a
-            href="#about-us"
-            className="
+          <NavLink
+            to="/about"
+            onClick={handleScrollTop}
+            className={({ isActive }) =>
+              `
         transition-all
         duration-300
         hover:text-primary
-      "
+        ${isActive ? "text-primary" : ""}
+      `
+            }
           >
             About Us
-          </a>
-
+          </NavLink>
           <a
             href="#faq"
             className="

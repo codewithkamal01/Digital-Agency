@@ -1,11 +1,23 @@
+import { NavLink } from "react-router-dom";
+
 function MobileSidebar({ setSideBarOpen }) {
   const closeMenu = () => setSideBarOpen(false);
 
+  const navClass = ({ isActive }) =>
+    `
+      text-lg
+      font-medium
+      transition-all
+      duration-300
+      hover:text-white/70
+      ${isActive ? "text-white" : "text-white/90"}
+    `;
+
   return (
     <>
-      <a onClick={closeMenu} href="#home">
+      <NavLink to="/" onClick={closeMenu} className={navClass}>
         Home
-      </a>
+      </NavLink>
 
       <a onClick={closeMenu} href="#services">
         Services
@@ -15,9 +27,9 @@ function MobileSidebar({ setSideBarOpen }) {
         Our Work
       </a>
 
-      <a onClick={closeMenu} href="#contact-us">
+      <NavLink to="/about" onClick={closeMenu} className={navClass}>
         About Us
-      </a>
+      </NavLink>
 
       <a onClick={closeMenu} href="#faq">
         FAQ
