@@ -5,35 +5,81 @@ import { cust_reviews } from "../../assets/assets";
 const reviewData = [
   {
     logo: cust_reviews[4],
-    rating: "4.8/5 on Clutch",
-    stars: 5,
+    rating: 4.8,
+    platform: "Clutch",
   },
   {
     logo: cust_reviews[7],
-    rating: "4.7/5 on Google",
-    stars: 5,
+    rating: 4.7,
+    platform: "Google",
   },
   {
     logo: cust_reviews[5],
-    rating: "4.4/5 on Upwork",
-    stars: 5,
+    rating: 4.4,
+    platform: "Upwork",
   },
   {
     logo: cust_reviews[3],
-    rating: "4.5/5 on GoodFirms",
-    stars: 5,
+    rating: 4.5,
+    platform: "GoodFirms",
   },
   {
     logo: cust_reviews[1],
-    rating: "4.6/5 on Trustpilot",
-    stars: 5,
+    rating: 4.6,
+    platform: "Trustpilot",
   },
   {
     logo: cust_reviews[2],
-    rating: "4.5/5 on UpCity",
-    stars: 5,
+    rating: 4.5,
+    platform: "UpCity",
   },
 ];
+
+function RatingStars({ rating }) {
+  return (
+    <div className="flex items-center justify-center gap-1">
+      {[1, 2, 3, 4, 5].map((star) => {
+        const fillPercentage = Math.min(Math.max(rating - (star - 1), 0), 1);
+
+        return (
+          <div
+            key={star}
+            className="
+              relative
+              h-5
+              w-5
+            "
+          >
+            {/* Empty Star */}
+            <Star
+              size={18}
+              className="
+                absolute
+                text-yellow-300/30
+              "
+            />
+
+            {/* Filled Star */}
+            <div
+              className="absolute overflow-hidden"
+              style={{
+                width: `${fillPercentage * 100}%`,
+              }}
+            >
+              <Star
+                size={18}
+                className="
+                  fill-yellow-400
+                  text-yellow-400
+                "
+              />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function CustomerReviewsSection() {
   return (
@@ -218,37 +264,20 @@ function CustomerReviewsSection() {
               {/* Rating */}
               <p
                 className="
-                  mt-5
-                  text-sm
-                  font-medium
-                  leading-6
-                  text-text-primary
-                  dark:text-white
-                "
+    mt-5
+    text-sm
+    font-medium
+    leading-6
+    text-text-primary
+    dark:text-white
+  "
               >
-                {item.rating}
+                {item.rating}/5 on {item.platform}
               </p>
 
               {/* Stars */}
-              <div
-                className="
-                  mt-4
-                  flex
-                  items-center
-                  justify-center
-                  gap-1
-                "
-              >
-                {[...Array(item.stars)].map((_, starIndex) => (
-                  <Star
-                    key={starIndex}
-                    size={16}
-                    className="
-                      fill-yellow-400
-                      text-yellow-400
-                    "
-                  />
-                ))}
+              <div className="mt-4">
+                <RatingStars rating={item.rating} />
               </div>
             </motion.div>
           ))}

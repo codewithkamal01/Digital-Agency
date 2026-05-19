@@ -66,6 +66,10 @@ import cust5 from "../assets/CustomerReview/5-1.jpg";
 import cust6 from "../assets/CustomerReview/6-1.jpg";
 import cust7 from "../assets/CustomerReview/7-1.jpg";
 import cust8 from "../assets/CustomerReview/g-8.jpg";
+import tl1 from "../assets/Time Line/1.jpg";
+import tl2 from "../assets/Time Line/2.jpg";
+import tl3 from "../assets/Time Line/3.jpg";
+import tl4 from "../assets/Time Line/4.jpg";
 
 export const company_logos = [
   google_analytics,
@@ -103,6 +107,8 @@ export const cust_reviews = [
   cust7,
   cust8,
 ];
+
+export const timeLine = [tl1, tl2, tl3, tl4];
 
 const assets = {
   Creyotech,

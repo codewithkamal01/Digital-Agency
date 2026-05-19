@@ -1,201 +1,381 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
-import Title from "../Title";
+import { Flag } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { timeLine } from "../../assets/assets";
 
-function ProcessTimeline() {
-  const containerRef = useRef(null);
+const timelineData = [
+  {
+    year: "2016",
+    month: "March 2016",
+    title: "Company Established",
+    cardTitle: "Foundation as a Startup-Focused Technology Partner",
+    description:
+      "Creyotech was founded with a clear purpose: to enable startups and SMEs to build dependable digital solutions without enterprise-level complexity or cost.",
+    image: timeLine[1],
+  },
+  {
+    year: "2016",
+    month: "July 2016",
+    title: "Service Expansion",
+    cardTitle: "Expansion Into Full-Scale Development",
+    description:
+      "The company expanded into modern web applications, scalable backend systems, and digital transformation services.",
+   image: timeLine[2],
+  },
+  {
+    year: "2022",
+    month: "April 2022",
+    title: "Ecommerce Products & Partnerships",
+    cardTitle: "Ecommerce Product Development & Top Ecommerce Platform Partnerships",
+    description:
+      "Creyotech integrated branding, SEO operations, UI/UX design, and digital growth services.",
+   image: timeLine[0],
+  },
+  {
+    year: "2026",
+    month: "January 2026",
+    title: "AI & Automation",
+    cardTitle: "Smart Automation & AI Integration",
+    description:
+      "The company introduced AI automation systems and operational workflows for scalable businesses.",
+   image: timeLine[3],
+  },
+];
+
+function CompanyTimeline() {
+  const timelineRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end end"],
+    target: timelineRef,
+    offset: ["start center", "end center"],
   });
 
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
-  const processData = [
-    {
-      step: "01",
-      title: "Discovery",
-      desc: "We understand your business goals, audience, and project requirements before starting.",
-    },
-    {
-      step: "02",
-      title: "Planning",
-      desc: "A clear strategy and roadmap is created to ensure smooth project execution.",
-    },
-    {
-      step: "03",
-      title: "Development",
-      desc: "Our team designs and develops scalable digital solutions with modern technologies.",
-    },
-    {
-      step: "04",
-      title: "Launch",
-      desc: "After testing and optimization, your project is launched successfully to the world.",
-    },
-  ];
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section
       className="
+        relative
+        overflow-hidden
         px-4
-        py-10
+        py-20
         sm:px-8
         lg:px-16
-        xl:px-24
-         dark:text-text-light
+        xl:px-40
       "
     >
-      <div className="mx-auto max-w-5xl mt-20">
-        {/* Title */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-20 flex flex-col items-center gap-8"
-        >
-          <Title
-            title="Our workflow"
-            desc="A streamlined workflow designed to transform ideas into impactful digital experiences."
-          />
-        </motion.div>
+      {/* Background Glow */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="
+            absolute
+            left-1/2
+            top-0
+            h-96
+            w-96
+            -translate-x-1/2
+            rounded-full
+            bg-primary/10
+            blur-3xl
+          "
+        />
+      </div>
 
-        {/* Timeline */}
-        <div ref={containerRef} className="relative">
-          {/* Static Line */}
+      <div className="mx-auto max-w-7xl">
+        {/* Heading */}
+        <div className="mb-24 text-center">
           <div
             className="
-              absolute
-              left-5
-              top-0
-              h-full
-              w-[2px]
-              bg-primary-100
-              md:left-1/2
-              md:-translate-x-1/2
+              inline-flex
+              rounded-full
+              border
+              border-primary/20
+              bg-primary/10
+              px-4
+              py-2
+              text-xs
+              font-semibold
+              uppercase
+              tracking-[3px]
+              text-primary
             "
-          />
+          >
+            Company Timeline
+          </div>
 
-          {/* Animated Line */}
-          <motion.div
-            style={{ scaleY }}
+          <h2
             className="
-              absolute
-              left-5
-              top-0
-              h-full
-              w-[2px]
-              origin-top
-              bg-primary
-              md:left-1/2
-              md:-translate-x-1/2
+              mt-6
+              text-3xl
+              font-bold
+              leading-tight
+              text-text-primary
+              dark:text-white
+              sm:text-5xl
             "
-          />
+          >
+            The journey behind Creyotech
+          </h2>
+        </div>
 
-          <div className="flex flex-col gap-12">
-            {processData.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.15,
-                }}
-                viewport={{ once: true }}
-                className={`
-                  relative
-                  flex
-                  flex-col
-                  md:w-1/2
-                  ${
-                    index % 2 === 0
-                      ? "md:pr-12 md:self-start"
-                      : "md:pl-12 md:self-end"
-                  }
-                `}
-              >
-                {/* Timeline Dot */}
-                <div
-                  className="
-                    absolute
-                    left-5
-                    top-8
-                    z-10
-                    h-4
-                    w-4
-                    -translate-x-1/2
-                    rounded-full
-                    border-4
-                    border-bg-light
-                    bg-primary
-                    dark:border-secondary
-                    md:left-auto
-                    md:right-0
-                  "
-                  style={index % 2 !== 0 ? { left: "-8px", right: "auto" } : {}}
-                />
+        {/* Timeline */}
+        <div ref={timelineRef} className="relative">
+          <div
+            className="
+    absolute
+    left-1/2
+    top-0
+    hidden
+    h-full
+    w-[3px]
+    -translate-x-1/2
+    overflow-hidden
+    rounded-full
+    bg-primary/10
+    lg:block
+  "
+          >
+            {/* Scroll Progress */}
+            <motion.div
+              style={{
+                height: lineHeight,
+              }}
+              className="
+      absolute
+      left-0
+      top-0
+      w-full
+      rounded-full
+      bg-primary
+      shadow-[0_0_20px_rgba(59,130,246,0.7)]
+    "
+            />
+          </div>
 
-                {/* Card */}
+          <div className="space-y-28">
+            {timelineData.map((item, index) => {
+              const isLeft = index % 2 === 0;
+
+              return (
                 <div
-                  className="
-                    ml-14
-                    rounded-3xl
-                    border
-                    border-border-light
-                    bg-bg-light
-                    p-8
-                    shadow-lg
-                    transition-all
-                    duration-300
-                    hover:-translate-y-1
-                    hover:shadow-2xl
-                    dark:border-border-dark
-                    dark:bg-secondary
-                    md:ml-0
-                  "
+                  key={index}
+                  className={`
+                    relative
+                    flex
+                    flex-col
+                    items-center
+                    lg:flex-row
+                    ${isLeft ? "" : "lg:flex-row-reverse"}
+                  `}
                 >
-                  <span
+                  {/* Left / Right Card */}
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      y: 50,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.7,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
                     className="
-                      text-sm
-                      font-semibold
-                      text-primary
+                      w-full
+                      lg:w-1/2
                     "
                   >
-                    Step {item.step}
-                  </span>
+                    <div
+                      className={`
+                        ${isLeft ? "lg:pr-20" : "lg:pl-20"}
+                      `}
+                    >
+                      <div
+                        className="
+                          overflow-hidden
+                          rounded-4xl
+                          border
+                          border-primary/10
+                          bg-white/60
+                          shadow-[0_20px_60px_rgba(0,0,0,0.06)]
+                          backdrop-blur-2xl
+                          dark:border-white/10
+                          dark:bg-white/[0.03]
+                        "
+                      >
+                        {/* Image */}
+                        <img
+                          src={item.image}
+                          alt={item.cardTitle}
+                          className="
+                            h-[280px]
+                            w-full
+                            object-cover
+                          "
+                        />
 
-                  <h3
-                    className="
-                      mt-3
-                      text-2xl
-                      font-semibold
-                      text-text-primary
-                      dark:text-text-light
-                    "
-                  >
-                    {item.title}
-                  </h3>
+                        {/* Content */}
+                        <div className="p-6 sm:p-8">
+                          <h3
+                            className="
+                              text-2xl
+                              font-bold
+                              leading-tight 
+                              text-text-primary
+                              dark:text-white
+                            "
+                          >
+                            {item.cardTitle}
+                          </h3>
 
-                  <p
+                          <p
+                            className="
+                              mt-5
+                              text-xs
+                              leading-8
+                              text-text-secondary
+                              dark:text-white/70
+                              sm:text-base
+                            "
+                          >
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Center Timeline Content */}
+                  <div
                     className="
-                      mt-4
-                      text-sm
-                      leading-7
-                      text-text-secondary
-                      dark:text-text-light/70
+                      absolute
+                      left-1/2
+                      top-0
+                      hidden
+                      -translate-x-1/2
+                      lg:block
                     "
                   >
-                    {item.desc}
-                  </p>
+                    {/* Year */}
+                    <div
+                      className="
+                        absolute
+                        left-1/2
+                        top-[-55px]
+                        -translate-x-1/2
+                        rounded-md
+                        bg-white
+                        px-4
+                        py-2
+                        text-sm
+                        font-bold
+                        shadow-md
+                        dark:bg-secondary
+                        dark:text-white
+                      "
+                    >
+                      {item.year}
+                    </div>
+
+                    {/* Dot */}
+                    <div
+                      className="
+                        flex
+                        h-14
+                        w-14
+                        items-center
+                        justify-center
+                        rounded-full
+                        border-2
+                        border-primary/20
+                        bg-white
+                        text-primary
+                        shadow-lg
+                        dark:bg-secondary
+                      "
+                    >
+                      <Flag size={18} />
+                    </div>
+                  </div>
+
+                  {/* Timeline Text */}
+                  <div
+                    className="
+                      hidden
+                      lg:block
+                      lg:w-1/2
+                    "
+                  >
+                    <div
+                      className={`
+                        ${isLeft ? "pl-20" : "pr-20 text-right"}
+                      `}
+                    >
+                      <h3
+                        className="
+                          text-3xl
+                          font-bold
+                          text-primary
+                        "
+                      >
+                        {item.month}
+                      </h3>
+
+                      <p
+                        className="
+                          mt-3
+                          text-2xl
+                          font-semibold
+                          leading-relaxed
+                          text-text-primary
+                          dark:text-white
+                        "
+                      >
+                        {item.title}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Mobile Timeline */}
+                  <div className="mt-6 text-center lg:hidden">
+                    <div
+                      className="
+                        inline-flex
+                        rounded-full
+                        border
+                        border-primary/20
+                        bg-primary/10
+                        px-4
+                        py-2
+                        text-xs
+                        font-semibold
+                        uppercase
+                        tracking-[2px]
+                        text-primary
+                      "
+                    >
+                      {item.month}
+                    </div>
+
+                    <h3
+                      className="
+                        mt-4
+                        text-2xl
+                        font-bold
+                        text-text-primary
+                        dark:text-white
+                      "
+                    >
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
@@ -203,4 +383,4 @@ function ProcessTimeline() {
   );
 }
 
-export default ProcessTimeline;
+export default CompanyTimeline;
