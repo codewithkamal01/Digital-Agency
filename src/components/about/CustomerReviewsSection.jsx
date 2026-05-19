@@ -87,7 +87,7 @@ function CustomerReviewsSection() {
       className="
         relative
         overflow-hidden
-        px-26
+        px-15
         py-20
         sm:px-8
         lg:px-16

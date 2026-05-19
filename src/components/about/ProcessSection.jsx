@@ -58,7 +58,7 @@ function ProcessSection() {
       className="
         relative
         overflow-hidden
-        px-4
+        px-8
         py-24
         sm:px-8
         lg:px-16
