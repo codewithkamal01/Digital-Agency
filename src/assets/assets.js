@@ -4,16 +4,16 @@ import group_profile from "./group_profile.webp";
 import bgImage1 from "./bgImage1.webp";
 import bgImage2 from "./bgImage2.webp";
 import hero_img from "./hero_img.webp";
-import spyfu from "./Spyfu.webp";
-import meta from "./Meta.webp";
-import moz from "./Moz.webp";
-import aws from "./aws.webp";
-import chatgpt from "./ChatGPT.webp";
-import godaddy from "./GoDaddy.webp";
-import mailchimp from "./Mailchimp.webp";
-import google_analytics from "./Google-Analytics.webp";
-import google_gemini from "./Google-Gemini.webp";
-import yoast from "./Yoast.webp";
+import spyfu from "./spyfu-logo.webp";
+import google_gemini from "./google-gemini-logo.webp";
+import hubspot from "./hubspot-logo.webp";
+import aws from "./aws-logo.webp";
+import chatgpt from "./chatgpt-logo.webp";
+import godaddy from "./godaddy-logo.webp";
+import moz from "./moz-logo.webp";
+import google_analytics from "./google-analytics-logo.webp";
+import mailchimp from "./mailchimp-logo.webp";
+import yoast from "./yoast-logo.webp";
 import ads_icon from "./ads_icon.svg";
 import content_icon from "./content_icon.svg";
 import marketing_icon from "./marketing_icon.svg";
@@ -33,12 +33,12 @@ import menu_icon_dark from "./menu_icon_dark.svg";
 import sun_icon from "./sun_icon.svg";
 import moon_icon from "./moon_icon.svg";
 import SGSir from "../assets/siddharthSir.webp";
-import CTO from "../assets/cto.webp";
-import CFO from "../assets/cfo.webp";
-import CMO from "../assets/cmo.webp";
-import priya from "../assets/priya.webp";
-import Creyotech from "../assets/Creyotech.webp";
-import Creyotech_dark from "../assets/Creyotech_dark.webp";
+import CTO from "../assets/cto-portrait.webp";
+import CFO from "../assets/cfo-portrait.webp";
+import CMO from "../assets/cmo-portrait.webp";
+import culture_head from "../assets/culture-head.webp";
+import Creyotech from "../assets/creyotech-logo-main.webp";
+import Creyotech_dark from "../assets/creyotech-logo-light.webp";
 import msme from "../assets/msme.webp";
 import iso from "../assets/iso.webp";
 import iso2 from "../assets/iso-2.webp";
@@ -47,31 +47,31 @@ import cmmi from "../assets/cmmi.webp";
 import meity from "../assets/Meity.webp";
 import StartUpIndia from "../assets/StartUpIndia.webp";
 import MakeInIndia from "../assets/MakeInIndia.webp";
-import clg1 from "../assets/Campus Collaboration/clg1.webp";
-import clg2 from "../assets/Campus Collaboration/clg2.webp";
-import clg3 from "../assets/Campus Collaboration/clg3.webp";
-import clg4 from "../assets/Campus Collaboration/clg4.webp";
-import clg5 from "../assets/Campus Collaboration/clg5.webp";
-import clg6 from "../assets/Campus Collaboration/clg6.webp";
-import clg7 from "../assets/Campus Collaboration/clg7.webp";
-import clg8 from "../assets/Campus Collaboration/clg8.webp";
-import clg9 from "../assets/Campus Collaboration/clg9.webp";
-import clg10 from "../assets/Campus Collaboration/clg10.webp";
-import clg11 from "../assets/Campus Collaboration/clg11.webp";
-import cust1 from "../assets/CustomerReview/1-1.webp";
-import cust2 from "../assets/CustomerReview/2-1.webp";
-import cust3 from "../assets/CustomerReview/3-1.webp";
-import cust4 from "../assets/CustomerReview/4-1.webp";
-import cust5 from "../assets/CustomerReview/5-1.webp";
-import cust6 from "../assets/CustomerReview/6-1.webp";
-import cust7 from "../assets/CustomerReview/7-1.webp";
-import cust8 from "../assets/CustomerReview/g-8.webp";
-import tl1 from "../assets/Time Line/1.webp";
-import tl2 from "../assets/Time Line/2.webp";
-import tl3 from "../assets/Time Line/3.webp";
-import tl4 from "../assets/Time Line/4.webp";
-import formation from "../assets/TheStory/formation.webp";
-import AboutHero from "../assets/AboutHero.webp";
+import clg1 from "../assets/campus-collaboration/campus-collab-clg-01.webp";
+import clg2 from "../assets/campus-collaboration/campus-collab-clg-02.webp";
+import clg3 from "../assets/campus-collaboration/campus-collab-clg-03.webp";
+import clg4 from "../assets/campus-collaboration/campus-collab-clg-04.webp";
+import clg5 from "../assets/campus-collaboration/campus-collab-clg-05.webp";
+import clg6 from "../assets/campus-collaboration/campus-collab-clg-06.webp";
+import clg7 from "../assets/campus-collaboration/campus-collab-clg-07.webp";
+import clg8 from "../assets/campus-collaboration/campus-collab-clg-08.webp";
+import clg9 from "../assets/campus-collaboration/campus-collab-clg-09.webp";
+import clg10 from "../assets/campus-collaboration/campus-collab-clg-10.webp";
+import clg11 from "../assets/campus-collaboration/campus-collab-clg-11.webp";
+import cust1 from "../assets/customer-review/g2-rating-logo.webp";
+import cust2 from "../assets/customer-review/trustpilot-rating-logo.webp";
+import cust3 from "../assets/customer-review/upcity-rating-logo.webp";
+import cust4 from "../assets/customer-review/goodfirms-rating-logo.webp";
+import cust5 from "../assets/customer-review/clutch-rating-logo.webp";
+import cust6 from "../assets/customer-review/upwork-rating-logo.webp";
+import cust7 from "../assets/customer-review/gartner-rating-logo.webp";
+import cust8 from "../assets/customer-review/google-rating-logo.webp";
+import tl1 from "../assets/time-line/timeline-step-01.webp";
+import tl2 from "../assets/time-line/timeline-step-02.webp";
+import tl3 from "../assets/time-line/timeline-step-03.webp";
+import tl4 from "../assets/time-line/timeline-step-04.webp";
+import formation from "../assets/company-formation.webp";
+import AboutHero from "../assets/digital-agency-about-hero.webp";
 import Accreditations from "../assets/Excellence/Accreditations.webp";
 import Client from "../assets/Excellence/Client.webp";
 import Development from "../assets/Excellence/Development.webp";
@@ -109,11 +109,10 @@ export const company_logos = [
   google_analytics,
   aws,
   chatgpt,
-  moz,
+  hubspot,
   google_gemini,
   mailchimp,
   godaddy,
-  meta,
   spyfu,
   yoast,
 ];
@@ -223,6 +222,6 @@ export const teamData = [
     name: "Priya Iyer",
     title: "Global People & Culture Head",
     desc: "Priya has 15+ years of experience in talent management, employee engagement, and HR operations across technology companies. She focuses on building strong workplace culture, scalable HR systems, and long-term workforce growth.",
-    image: priya,
+    image: culture_head,
   },
 ];
