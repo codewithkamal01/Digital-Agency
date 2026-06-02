@@ -34,10 +34,3 @@ export const serviceSections = [
     ],
   },
 ];
-
-export const workItems = [
-  "Case Studies",
-  "Recent Projects",
-  "Client Testimonials",
-  "Creative Showcase",
-];

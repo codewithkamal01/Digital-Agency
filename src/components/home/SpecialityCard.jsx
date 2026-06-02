@@ -5,7 +5,7 @@ import Title from "../Title";
 function SpecialityCard() {
   const items = [
     {
-      title: "Budget Friendly",
+      title: "Optimized Budget",
       icon: <Wallet size={28} />,
       desc: "Affordable and scalable digital solutions tailored for startups and growing businesses.",
     },
@@ -38,7 +38,7 @@ function SpecialityCard() {
         xl:px-24
       "
     >
-      <div className="mb-10 flex flex-col gap-8 items-center">
+      <div className="mb-10 dark:text-text-light text-xl flex flex-col gap-8 items-center">
         <Title title="Our Specialities" />
       </div>
       {/* Background Glow */}

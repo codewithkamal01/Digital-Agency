@@ -8,6 +8,8 @@ import FAQ from "../home/FAQ";
 import TrustedBy from "../home/TrustedBy";
 import EngagementModels from "../home/EngagementModels";
 import SpecialityCard from "../home/SpecialityCard";
+import BuiltInAssurances from "../home/BuiltInAssurances";
+import TechnologyStack from "../home/TechnologyStack.JSX";
 
 function Home() {
   return (
@@ -20,8 +22,10 @@ function Home() {
       />
       <SpecialityCard/>
       <Services />
+      <BuiltInAssurances/>
       <LatestWork />
       <EngagementModels/>
+      <TechnologyStack/>
       <FAQ />
       <Contact />
     </>

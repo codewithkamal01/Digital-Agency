@@ -10,7 +10,7 @@ function NavbarCTA() {
         gap-2
         rounded-full
         bg-primary
-        px-6
+        px-5
         py-2
         text-sm
         text-text-light

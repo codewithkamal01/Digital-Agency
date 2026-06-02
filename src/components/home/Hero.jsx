@@ -5,95 +5,83 @@ import { TypeAnimation } from "react-type-animation";
 
 function Hero() {
   return (
-    <div
-      className="flex flex-col items-center gap-6 py-24 px-4 sm:px-12 lg:px-24 xl:px-40 text-center w-full overflow-hidden text-text-primary dark:text-text-light"
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        viewport={{ once: true }}
-        className="inline-flex items-center gap-2 border border-border-light p-1.5
-       pr-4 rounded-full"
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover"
       >
-        <img className="sm:w-28 w-18" src={assets.group_profile} alt="" />
-        <p className="text-xs font-medium">trusted by 150+ people</p>
-      </motion.div>
-      <motion.h1
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-        viewport={{ once: true }}
-        className="text-4xl sm:text-5xl md:text-6xl xl:text-[84px] font-medium xl:leading-[95px] max-w-5xl"
-      >
-        Turning Imagination into{" "}
-        <span className="bg-primary pt-1 pb-5 bg-clip-text text-transparent inline-block min-w-[320px]">
-          <TypeAnimation
-            sequence={[
-              "digital impact.",
-              1500,
+        <source src={assets.heroVideo} type="video/mp4" />
+      </video>
 
-               "bold ideas.",
-              1500,
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/55 to-black/70" />
 
-              "modern solutions.",
-              1500,
-
-              "creative products.",
-              1500,
-
-              "real innovation.",
-              1500,
-            ]}
-            speed={50}
-            repeat={Infinity}
-            cursor={true}
-            wrapper="span"
-          />
-        </span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-        viewport={{ once: true }}
-        className="text-sm sm:text-lg font-medium text-text-secondary dark:text-text-light/75 max-w-4/5 sm:max-w-lg pb-3"
-      >
-        Creating meaningful connections and turning big ideas into interactive
-        digital experiences.
-      </motion.p>
-      <div className="relative">
-        {/* Background image */}
-        <motion.img
-          src={assets.bgImage1}
-          alt=""
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          viewport={{ once: true }}
-          className="
-      absolute
-      -top-40
-      -right-40
-      sm:-top-100
-      sm:-right-70
-      -z-10
-      dark:hidden
-    "
-        />
-
-        {/* Animated hero image only */}
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-5 text-center text-white">
+        {/* Trust Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 1.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-2 py-2 backdrop-blur-md"
         >
-          <video autoPlay muted  src={assets.heroVideo} alt="" className="w-full max-w-6xl rounded-4xl" />
+          <img
+            src={assets.group_profile}
+            alt="Clients"
+            className="h-7 w-auto sm:h-8"
+          />
+          <p className="pr-2 text-xs font-medium sm:text-sm">
+            Trusted by 1500+ clients across India
+          </p>
         </motion.div>
+
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="max-w-6xl text-4xl font-semibold leading-tight sm:text-6xl lg:text-7xl"
+        >
+          Your Trusted
+          <span className="mx-2 text-primary">PAN India</span>
+          Growth Partner for
+          <br />
+          <span className="mt-2 block min-h-[1.2em] text-primary">
+            <TypeAnimation
+              sequence={[
+                "Innovative Marketer",
+                2000,
+                "Brand Strategist",
+                2000,
+                "Creative Partner",
+                2000,
+                "Trendsetting Creator",
+                2000,
+              ]}
+              speed={60}
+              repeat={Infinity}
+              preRenderFirstString
+            />
+          </span>
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="mt-6 max-w-2xl text-base text-white/80 sm:text-lg"
+        >
+          We help businesses build stronger brands, attract more customers, and
+          achieve measurable growth through creative digital solutions.
+        </motion.p>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -23,17 +23,15 @@ function MobileSidebar({ setSideBarOpen }) {
         Services
       </a>
 
-      <a onClick={closeMenu} href="#our-work">
-        Our Work
-      </a>
-
       <NavLink to="/about" onClick={closeMenu} className={navClass}>
         About Us
       </NavLink>
-
-      <a onClick={closeMenu} href="#faq">
-        FAQ
-      </a>
+      <NavLink to="/career" onClick={closeMenu} className={navClass}>
+        Career
+      </NavLink>
+      <NavLink to="/contact-us" onClick={closeMenu} className={navClass}>
+        Contact Us
+      </NavLink>
     </>
   );
 }

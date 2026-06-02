@@ -1,250 +1,213 @@
-import React from "react";
-import { BriefcaseBusiness, Code2, Users, ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { BriefcaseBusiness, Code2, Users, CheckCircle2 } from "lucide-react";
+import Title from "../Title";
 
 const engagementModels = [
   {
+    id: "fixed",
     title: "Fixed Scope Delivery Model",
+    shortTitle: "Fixed Scope",
+    icon: <BriefcaseBusiness size={30} />,
     description:
       "A structured engagement with clearly defined scope, timelines, and predictable project delivery.",
-    icon: <BriefcaseBusiness size={34} />,
+
+    steps: [
+      {
+        title: "Requirement Discovery",
+        description:
+          "We gather detailed requirements, project goals, and expected deliverables before planning begins.",
+      },
+      {
+        title: "Planning & Scope Finalization",
+        description:
+          "Timeline, milestones, and budget are finalized to ensure transparency and predictability.",
+      },
+      {
+        title: "Development & Delivery",
+        description:
+          "Our team executes the project according to the approved scope and delivers on schedule.",
+      },
+    ],
   },
+
   {
+    id: "agile",
     title: "Agile Iterative Development Model",
+    shortTitle: "Agile Development",
+    icon: <Code2 size={30} />,
     description:
-      "A sprint-based collaborative approach designed for evolving requirements and rapid delivery. Suited for dynamic projects.",
-    icon: <Code2 size={34} />,
+      "A sprint-based collaborative approach designed for evolving requirements and rapid delivery.",
+
+    steps: [
+      {
+        title: "Sprint Planning",
+        description:
+          "Features are prioritized and organized into short development cycles.",
+      },
+      {
+        title: "Iterative Development",
+        description:
+          "Continuous releases allow rapid feedback and faster improvements.",
+      },
+      {
+        title: "Review & Optimization",
+        description:
+          "Each sprint ends with testing, review, and planning for the next iteration.",
+      },
+    ],
   },
+
   {
+    id: "dedicated",
     title: "Dedicated Resource Engagement Model",
+    shortTitle: "Dedicated Team",
+    icon: <Users size={30} />,
     description:
-      "A long-term partnership where dedicated experts work as an extension of your internal team.",
-    icon: <Users size={34} />,
+      "Dedicated experts work as an extension of your internal team for long-term growth.",
+
+    steps: [
+      {
+        title: "Team Selection",
+        description:
+          "Choose developers, designers, marketers, or specialists based on your needs.",
+      },
+      {
+        title: "Direct Collaboration",
+        description:
+          "Work closely with your dedicated resources through your preferred communication channels.",
+      },
+      {
+        title: "Scale On Demand",
+        description:
+          "Expand or adjust team size as business requirements evolve.",
+      },
+    ],
   },
 ];
 
 function EngagementModels() {
-  return (
-    <section
-      className="
-        relative
-        overflow-hidden
-        px-4
-        py-24
-        sm:px-8
-        lg:px-16
-        xl:px-24
-      "
-    >
-      {/* Background Glow */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div
-          className="
-            absolute
-            left-1/2
-            top-0
-            h-96
-            w-96
-            -translate-x-1/2
-            rounded-full
-            bg-primary/10
-            blur-3xl
-          "
-        />
-      </div>
+  const [activeModel, setActiveModel] = useState(engagementModels[0]);
 
+  return (
+    <section className="px-4 py-20 sm:px-8 lg:px-16 xl:px-24">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="
-            mb-16
-            text-center
-          "
-        >
-          <div
-            className="
-              inline-flex
-              rounded-full
-              border
-              border-primary/20
-              bg-primary/10
-              px-4
-              py-2
-              text-xs
-              font-semibold
-              uppercase
-              tracking-[3px]
-              text-primary
-            "
-          >
-            Engagement Models
-          </div>
+        <div className="mx-auto max-w-4xl text-center dark:text-text-light">
+          <span className="font-medium text-primary pb-5">
+            Flexible Engagement Models
+          </span>
+          <Title
+            title="Choose The Collaboration Model
+            That Fits Your Business"
+          />
+          <p className="mx-auto mt-6 max-w-3xl text-text-secondary">
+            Whether you need a fixed-cost project, agile product development, or
+            dedicated resources, we offer flexible engagement options to match
+            your goals.
+          </p>
+        </div>
 
-          <h2
-            className="
-              mt-6
-              text-3xl
-              font-bold
-              text-text-primary
-              dark:text-white
-              sm:text-5xl
-            "
-          >
-            Flexible Collaboration Models
-          </h2>
-        </motion.div>
-
-        {/* Cards */}
-        <div
-          className="
-            grid
-            gap-6
-            md:grid-cols-2
-            xl:grid-cols-3
-          "
-        >
-          {engagementModels.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
-              viewport={{
-                once: true,
-              }}
-              whileHover={{
-                y: -6,
-              }}
-              className="
-                group
-                relative
-                overflow-hidden
-                rounded-4xl
-                border
-                border-primary/10
-                bg-white/70
-                p-7
-                shadow-[0_15px_50px_rgba(0,0,0,0.05)]
-                backdrop-blur-xl
-                transition-all
-                duration-300
-                hover:border-primary/20
-                dark:border-white/10
-                dark:bg-white/[0.03]
-              "
+        {/* Tabs */}
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          {engagementModels.map((model) => (
+            <button
+              key={model.id}
+              onClick={() => setActiveModel(model)}
+              className={`relative rounded-full px-8 py-4 text-sm font-medium transition-all duration-300 ${
+                activeModel.id === model.id
+                  ? "bg-primary text-white shadow-lg"
+                  : "border border-border-light bg-bg-light hover:border-primary"
+              }`}
             >
-              {/* Hover Glow */}
-              <div
-                className="
-                  absolute
-                  right-0
-                  top-0
-                  h-32
-                  w-32
-                  rounded-full
-                  bg-primary/10
-                  blur-3xl
-                  opacity-0
-                  transition-all
-                  duration-500
-                  group-hover:opacity-100
-                "
-              />
-
-              {/* Icon */}
-              <div
-                className="
-                  relative
-                  z-10
-                  flex
-                  h-16
-                  w-16
-                  items-center
-                  justify-center
-                  rounded-2xl
-                  bg-primary/10
-                  text-primary
-                "
-              >
-                {item.icon}
-              </div>
-
-              {/* Content */}
-              <div className="relative z-10 mt-6">
-                <h3
-                  className="
-                    text-2xl
-                    font-bold
-                    leading-snug
-                    text-text-primary
-                    dark:text-white
-                  "
-                >
-                  {item.title}
-                </h3>
-
-                <p
-                  className="
-                    mt-4
-                    text-sm
-                    leading-5
-                    text-text-secondary
-                    dark:text-white/70
-                  "
-                >
-                  {item.description}
-                </p>
-
-                {/* CTA */}
-                <button
-                  className="
-                    mt-6
-                    inline-flex
-                    items-center
-                    gap-2
-                    text-sm
-                    font-semibold
-                    text-primary
-                    transition-all
-                    group-hover:gap-3
-                  "
-                >
-                  Discover More
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-
-              {/* Floating Number */}
-              <div
-                className="
-                  absolute
-                  bottom-3
-                  right-5
-                  text-6xl
-                  font-bold
-                  leading-none
-                  text-primary/5
-                  dark:text-white/[0.03]
-                "
-              >
-                {(index + 1).toString().padStart(2, "0")}
-              </div>
-            </motion.div>
+              {model.shortTitle}
+            </button>
           ))}
         </div>
+
+        {/* Content Card */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeModel.id}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -25 }}
+            transition={{ duration: 0.3 }}
+            className="
+              mt-10
+              overflow-hidden
+              rounded-3xl
+              border
+              border-border-light
+              bg-bg-light
+              shadow-lg
+              dark:border-border-dark
+              dark:bg-secondary
+            "
+          >
+            {/* Steps */}
+            <div>
+              <div className="px-8 pt-8">
+                <h4 className="text-xl font-semibold dark:text-text-light">
+                  Process in 3 Easy Steps
+                </h4>
+              </div>
+
+              {activeModel.steps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="flex gap-6 p-8 dark:text-text-light"
+                >
+                  <div
+                    className="
+                      flex
+                      h-14
+                      w-14
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-primary
+                      text-lg
+                      font-bold
+                      text-white
+                    "
+                  >
+                    {index + 1}
+                  </div>
+
+                  <div>
+                    <h5 className="text-2xl font-semibold">{step.title}</h5>
+
+                    <p className="mt-3 max-w-4xl text-text-secondary">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Footer Benefits */}
+            <div className="border-t border-border-light bg-primary/5 p-8">
+              <div className="grid gap-4 md:grid-cols-3 dark:text-text-light">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="text-primary" />
+                  Transparent Process
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="text-primary" />
+                  Flexible Engagement
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="text-primary" />
+                  Dedicated Support
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

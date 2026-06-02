@@ -38,4 +38,32 @@
   .shadow-soft {
     box-shadow: 0 20px 80px var(--color-shadow-light);
   }
+
+  /* Marquee animation for card rows */
+  .marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    animation: marquee 8s linear infinite;
+  }
+
+  .marquee-card {
+    min-width: 18rem; /* adjust card width */
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
 }

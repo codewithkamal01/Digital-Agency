@@ -24,10 +24,9 @@ function TrustedBy({
         relative
         overflow-hidden
         px-4
-        pb-16
-        sm:px-12
-        lg:px-24
-        xl:px-40
+        py-18
+        pb-10
+        sm:px-1
         ${className}
       `}
     >
@@ -70,7 +69,7 @@ function TrustedBy({
               font-bold
               text-text-primary
               dark:text-white
-              sm:text-3xl
+              sm:text-5xl
             "
           >
             {title}

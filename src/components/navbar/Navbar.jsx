@@ -33,7 +33,7 @@ function Navbar({ theme, setTheme }) {
         border-black/5
         bg-bg-light/60
         px-4
-        py-4
+        py-2
         font-medium
         backdrop-blur-xl
         dark:border-white/10
@@ -47,7 +47,7 @@ function Navbar({ theme, setTheme }) {
       <div className="flex items-center gap-1 font-bold">
         <img
           src={theme === "dark" ? assets.Creyotech_dark : assets.Creyotech}
-          className="w-26 sm:w-30 rounded"
+          className="w-26 sm:w-28 rounded"
           alt=""
         />
       </div>
@@ -109,16 +109,35 @@ function Navbar({ theme, setTheme }) {
           >
             About Us
           </NavLink>
-          <a
-            href="#faq"
-            className="
+           <NavLink
+            to="/career"
+            onClick={handleScrollTop}
+            className={({ isActive }) =>
+              `
         transition-all
         duration-300
         hover:text-primary
-      "
+        ${isActive ? "text-primary" : ""}
+      `
+            }
           >
-            FAQ
-          </a>
+           Career
+          </NavLink>
+           <NavLink
+            to="/contact-us"
+            onClick={handleScrollTop}
+            className={({ isActive }) =>
+              `
+        transition-all
+        duration-300
+        hover:text-primary
+        ${isActive ? "text-primary" : ""}
+      `
+            }
+          >
+           Contact Us
+          </NavLink>
+        
         </div>
 
         {/* Mobile Nav */}

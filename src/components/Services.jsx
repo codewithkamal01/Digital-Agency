@@ -51,11 +51,11 @@ function Services() {
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary">
+          <h2 className="text-4xl md:text-5xl font-bold text-secondary dark:text-text-light">
             Our Services
           </h2>
 
-          <p className="mt-4 max-w-2xl mx-auto text-secondary/70">
+          <p className="mt-4 max-w-2xl mx-auto text-secondary/70 dark:text-text-secondary/70">
             Smart digital and business solutions built to help brands scale
             faster and operate better.
           </p>

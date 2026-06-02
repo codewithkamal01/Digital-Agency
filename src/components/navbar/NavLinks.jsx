@@ -1,6 +1,6 @@
 import MegaMenuSection from "./MegaMenuSection";
 import NavDropdown from "./NavDropdown";
-import { serviceSections, workItems } from "./navbarData";
+import { serviceSections } from "./navbarData";
 
 function NavLinks({ activeMenu, setActiveMenu }) {
   return (
@@ -46,77 +46,6 @@ function NavLinks({ activeMenu, setActiveMenu }) {
               "
             >
               Start Project
-            </a>
-          </div>
-        </div>
-      </NavDropdown>
-
-      {/* Work */}
-      <NavDropdown
-        label="Our Work"
-        menuKey="work"
-        activeMenu={activeMenu}
-        setActiveMenu={setActiveMenu}
-        width="w-[650px]"
-      >
-        <div className="grid grid-cols-2 gap-6">
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[3px] text-primary">
-              Portfolio
-            </p>
-
-            {workItems.map((item, index) => (
-              <a
-                key={index}
-                href="#our-work"
-                className="
-                  block
-                  rounded-2xl
-                  p-3
-                  transition-all
-                  hover:bg-primary/5
-                "
-              >
-                <h3 className="font-medium dark:text-text-light">{item}</h3>
-              </a>
-            ))}
-          </div>
-
-          <div
-            className="
-              rounded-3xl
-              bg-gradient-to-br
-              from-primary
-              to-blue-600
-              p-6
-              text-white
-            "
-          >
-            <p className="text-xs uppercase tracking-[3px] text-white/70">
-              Featured Work
-            </p>
-
-            <h2 className="mt-4 text-2xl font-semibold leading-tight">
-              Helping brands grow with modern design.
-            </h2>
-
-            <a
-              href="#our-work"
-              className="
-                mt-6
-                inline-flex
-                rounded-full
-                bg-white
-                px-5
-                py-3
-                text-sm
-                font-medium
-                text-black
-                transition-all
-                hover:scale-105
-              "
-            >
-              View Projects
             </a>
           </div>
         </div>
