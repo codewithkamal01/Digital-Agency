@@ -9,7 +9,7 @@ import TrustedBy from "../home/TrustedBy";
 import EngagementModels from "../home/EngagementModels";
 import SpecialityCard from "../home/SpecialityCard";
 import BuiltInAssurances from "../home/BuiltInAssurances";
-import TechnologyStack from "../home/TechnologyStack.JSX";
+import TechnologyStack from "../home/TechnologyStack.jsx";
 
 function Home() {
   return (
@@ -20,12 +20,12 @@ function Home() {
         title="Trusted by Leading Companies"
         logos={company_logos}
       />
-      <SpecialityCard/>
+      <SpecialityCard />
       <Services />
-      <BuiltInAssurances/>
+      <BuiltInAssurances />
       <LatestWork />
-      <EngagementModels/>
-      <TechnologyStack/>
+      <EngagementModels />
+      <TechnologyStack />
       <FAQ />
       <Contact />
     </>
