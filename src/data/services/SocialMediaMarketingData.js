@@ -1,3 +1,5 @@
+import { service_images } from "../../assets/assets";
+
 export const socialMediaMarketingData = {
   hero: {
     badge: "Social Media Marketing",
@@ -6,63 +8,147 @@ export const socialMediaMarketingData = {
       "From organic growth and influencer campaigns to paid social advertising and video content production, we help brands scale their social presence.",
     ctaPrimary: "Book Consultation",
     ctaSecondary: "View Packages",
-    image: "/images/services/social-media-marketing.webp",
+    image: service_images.socialmedia,
   },
 
-  services: [
+  offerings: [
     {
+      id: "organic-growth",
+
       title: "Organic Social Media Growth",
+
+      subtitle: "Community & Brand Building",
+
+      type: "growth",
+
       description:
-        "Consistent content and community management that builds trust and audience loyalty.",
-      idealFor: ["Local Brands", "Consultants", "Service Businesses"],
+        "Consistent content creation, publishing, and community management designed to strengthen brand visibility, credibility, and audience trust.",
+
+      idealFor: [
+        "Local Brands",
+        "Consultants",
+        "Service Businesses",
+        "Personal Brands",
+      ],
+
       features: [
         "Content Planning",
         "Creative Design",
         "Community Management",
+        "Engagement Tracking",
         "Analytics Reporting",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Client approval required for content publishing",
+        "Consistent posting schedule recommended",
       ],
     },
 
     {
+      id: "influencer-marketing",
+
       title: "Influencer Campaign Management",
+
+      subtitle: "Influencer-Led Brand Promotion",
+
+      type: "awareness",
+
       description:
-        "Influencer partnerships designed to increase reach, trust and awareness.",
-      idealFor: ["Consumer Brands", "Retail Businesses", "Product Launches"],
+        "Strategic influencer collaborations designed to expand reach, build trust, and increase brand awareness among targeted audiences.",
+
+      idealFor: [
+        "Consumer Brands",
+        "Retail Businesses",
+        "Product Launches",
+        "D2C Companies",
+      ],
+
       features: [
         "Influencer Discovery",
+        "Influencer Vetting",
         "Campaign Management",
         "Content Review",
         "ROI Reporting",
       ],
+
+      eligibility: [],
+
+      conditions: [
+        "Influencer selection subject to availability",
+        "Campaign budget determined separately",
+      ],
     },
 
     {
+      id: "paid-social",
+
       title: "Paid Social Advertising",
+
+      subtitle: "Performance Marketing Campaigns",
+
+      type: "performance",
+
       description:
-        "Performance-driven Facebook, Instagram and LinkedIn campaigns.",
-      idealFor: ["Lead Generation", "B2B Marketing", "Fast-Growing Startups"],
+        "Data-driven advertising campaigns across Facebook, Instagram, and LinkedIn focused on lead generation, conversions, and measurable ROI.",
+
+      idealFor: [
+        "Lead Generation",
+        "B2B Companies",
+        "Fast-Growing Startups",
+        "Scaling Businesses",
+      ],
+
       features: [
         "Audience Targeting",
         "Ad Creative Design",
+        "Campaign Setup",
         "Conversion Tracking",
-        "Optimization",
+        "Continuous Optimization",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Advertising budget excluded from management fees",
+        "Performance depends on market competition and offer quality",
       ],
     },
 
     {
-      title: "AI-Led Video Production",
+      id: "video-production",
+
+      title: "AI-Led & Human-Led Video Production",
+
+      subtitle: "Modern Video Content Creation",
+
+      type: "content",
+
       description:
-        "Scalable AI-generated and human-led video content production.",
+        "Scalable video production combining AI-generated content and real human presenters to create engaging marketing assets efficiently.",
+
       idealFor: [
         "Educational Content",
         "Product Demonstrations",
-        "Social Campaigns",
+        "Social Media Campaigns",
+        "Promotional Marketing",
       ],
+
       features: [
         "AI Avatars",
+        "Voice Generation",
         "Human Presenters",
         "Reels Production",
-        "Post Production",
+        "Editing & Post Production",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Scripts require client approval",
+        "Video output varies based on production requirements",
       ],
     },
   ],

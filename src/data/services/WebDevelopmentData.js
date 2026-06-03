@@ -1,3 +1,5 @@
+import { service_images } from "../../assets/assets";
+
 export const webDevelopmentData = {
   hero: {
     badge: "Web Development Services",
@@ -6,7 +8,7 @@ export const webDevelopmentData = {
       "From business websites to enterprise-grade web applications, we build digital experiences designed to support your business objectives and long-term growth.",
     ctaPrimary: "Book Free Consultation",
     ctaSecondary: "View Our Work",
-    image: "/images/services/web-development-hero.webp",
+    image: service_images.webapp,
   },
 
   offerings: [
@@ -15,9 +17,22 @@ export const webDevelopmentData = {
       title: "Complimentary Website Offering",
       subtitle: "For Verified Businesses",
       type: "featured",
-
       description:
         "A complimentary website initiative designed to help verified startups and small businesses establish their initial digital presence.",
+
+      idealFor: [
+        "Verified Startups",
+        "Small Businesses",
+        "Local Service Providers",
+        "New Business Owners",
+      ],
+
+      features: [
+        "No Development Cost",
+        "Mobile Responsive Website",
+        "Business Information Pages",
+        "Basic SEO Setup",
+      ],
 
       eligibility: [
         "GST Registration Certificate",
@@ -37,7 +52,8 @@ export const webDevelopmentData = {
     {
       id: "portfolio",
       title: "Modern & Luxury Portfolio Websites",
-
+      subtitle: "Premium Brand Presence",
+      type: "premium",
       description:
         "Premium websites designed to strengthen brand perception, build credibility, and generate qualified inquiries.",
 
@@ -56,12 +72,20 @@ export const webDevelopmentData = {
         "Mobile-First Architecture",
         "Performance Optimization",
       ],
+
+      eligibility: [],
+
+      conditions: [
+        "Client provides branding assets",
+        "Content strategy consultation included",
+      ],
     },
 
     {
       id: "mini-commerce",
       title: "Mini E-Commerce Websites",
-
+      subtitle: "Payment-Focused Solution",
+      type: "commerce",
       description:
         "Lightweight e-commerce solutions focused on secure online payments and fast market entry.",
 
@@ -78,23 +102,41 @@ export const webDevelopmentData = {
         "Basic Order Workflow",
         "Fast Loading Architecture",
       ],
+
+      eligibility: [],
+
+      conditions: ["Limited catalog size", "Designed for simple transactions"],
     },
 
     {
       id: "enterprise-commerce",
       title: "Full-Scale E-Commerce Solutions",
-
+      subtitle: "Enterprise Ready",
+      type: "enterprise",
       description:
         "Enterprise-grade commerce platforms with automation, integrations, and scalability at the core.",
 
-      integrations: [
-        "Payment Gateways",
-        "Logistics Integration",
+      idealFor: [
+        "Retail Brands",
+        "Manufacturers",
+        "Large Catalog Stores",
+        "Growth-Stage Businesses",
+      ],
+
+      features: [
+        "Payment Gateway Integration",
         "CRM Integration",
         "Inventory Management",
-        "Automated Communication",
         "Analytics & Reporting",
-        "Remarketing Systems",
+        "Marketing Automation",
+        "Customer Lifecycle Tracking",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Requires discovery workshop",
+        "Custom implementation roadmap",
       ],
     },
   ],

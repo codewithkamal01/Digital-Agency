@@ -1,3 +1,5 @@
+import { service_images } from "../../assets/assets";
+
 export const digitalMarketingData = {
   hero: {
     badge: "Digital Marketing Services",
@@ -6,115 +8,204 @@ export const digitalMarketingData = {
       "From search visibility and AI-powered discovery to verified lead generation and outbound campaigns, we help businesses build predictable growth engines.",
     ctaPrimary: "Book Strategy Call",
     ctaSecondary: "Explore Services",
-    image: "/images/services/digital-marketing.webp",
+    image: service_images.digitalmarketing,
   },
 
   services: [
     {
-      title: "Foundational SEO",
+      id: "foundational-seo",
+
+      title: "Foundational Search Engine Optimization",
+
+      subtitle: "Complimentary Program",
+
+      type: "starter",
+
       description:
-        "Baseline search optimization for businesses starting their online presence.",
-      idealFor: ["New Businesses", "MSMEs", "Local Service Providers"],
+        "A baseline SEO setup designed to establish search visibility for verified businesses beginning their digital journey.",
+
+      idealFor: [
+        "Newly Registered Businesses",
+        "MSMEs",
+        "Local Service Providers",
+      ],
+
       features: [
-        "SEO Health Check",
+        "Website SEO Health Check",
         "Basic On-Page Optimization",
         "Google Search Console Setup",
         "Indexing & Sitemap Configuration",
       ],
+
+      eligibility: [
+        "Verified Business",
+        "Website Must Be Live",
+        "Business Information Available",
+      ],
+
+      conditions: [
+        "Foundational SEO only",
+        "Advanced SEO requires separate engagement",
+      ],
     },
 
     {
+      id: "advanced-seo",
+
       title: "Advanced SEO & Organic Growth",
+
+      subtitle: "Long-Term Search Visibility",
+
+      type: "growth",
+
       description:
-        "Long-term SEO strategies focused on rankings, traffic and lead generation.",
+        "Comprehensive SEO programs focused on sustained organic traffic growth, rankings, and lead generation.",
+
       idealFor: [
         "Growing Businesses",
         "B2B Organizations",
         "E-Commerce Brands",
       ],
+
       features: [
         "Keyword Research",
-        "Technical SEO",
         "Content Mapping",
-        "Backlink Building",
+        "Technical SEO",
+        "Authority Building",
+        "Backlink Strategy",
         "Monthly Reporting",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Minimum 3–6 month engagement recommended",
+        "Results depend on competition and industry",
       ],
     },
 
     {
+      id: "geo",
+
       title: "Generative Engine Optimization (GEO)",
+
+      subtitle: "AI Search Visibility",
+
+      type: "future-ready",
+
       description:
-        "Optimize your visibility across AI-powered search and answer engines.",
+        "Optimize visibility across AI-powered search engines, answer engines, and LLM-driven discovery platforms.",
+
       idealFor: ["Consultants", "Thought Leaders", "Knowledge Businesses"],
+
       features: [
         "AI Search Audit",
         "LLM Content Structuring",
         "Trust Signal Optimization",
+        "Brand Authority Building",
         "AI Discovery Strategy",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Requires content-driven business presence",
+        "Best combined with SEO initiatives",
       ],
     },
 
     {
+      id: "verified-leads",
+
       title: "Verified Lead Generation",
+
+      subtitle: "Sales Pipeline Enablement",
+
+      type: "performance",
+
       description:
-        "High-intent, verified leads delivered directly to your sales pipeline.",
+        "Delivering verified and sales-ready leads aligned with your ideal customer profile.",
+
       idealFor: [
         "B2B Companies",
         "Enterprise Sales Teams",
-        "High-Ticket Services",
+        "High-Ticket Service Providers",
       ],
+
       features: [
         "Lead Verification",
         "ICP Targeting",
-        "CRM Ready Delivery",
+        "CRM-Ready Delivery",
         "Performance-Based Models",
       ],
-    },
 
-    {
-      title: "Cold Email Outreach",
-      description:
-        "Scalable outbound email systems designed to generate meetings and opportunities.",
-      features: [
-        "Prospect Research",
-        "Automated Sequences",
-        "Follow-Up Systems",
-        "Performance Tracking",
+      eligibility: [],
+
+      conditions: [
+        "Lead quality depends on ICP definition",
+        "Requires sales follow-up process",
       ],
     },
 
     {
-      title: "WhatsApp Outreach",
+      id: "cold-email",
+
+      title: "Cold Email Outreach",
+
+      subtitle: "Outbound Lead Generation",
+
+      type: "outreach",
+
       description:
-        "Direct messaging campaigns with high open and response rates.",
+        "Scalable outbound email campaigns designed to generate meetings, inquiries, and opportunities.",
+
+      idealFor: ["B2B Businesses", "Consultants", "SaaS Companies"],
+
+      features: [
+        "Prospect Research",
+        "Email Sequences",
+        "Automated Follow-Ups",
+        "Performance Tracking",
+      ],
+
+      eligibility: [],
+
+      conditions: [
+        "Requires approved target audience",
+        "Compliance-first campaign execution",
+      ],
+    },
+
+    {
+      id: "whatsapp-outreach",
+
+      title: "WhatsApp Outreach Campaigns",
+
+      subtitle: "Direct Messaging Strategy",
+
+      type: "outreach",
+
+      description:
+        "High-engagement WhatsApp campaigns designed for faster responses and direct conversations.",
+
+      idealFor: [
+        "Local Businesses",
+        "Appointment-Based Businesses",
+        "Service Companies",
+      ],
+
       features: [
         "Personalized Messaging",
         "Campaign Scheduling",
-        "Response Handling",
-        "Compliance Management",
+        "Response Management",
+        "Compliance Monitoring",
       ],
-    },
 
-    {
-      title: "Outbound Tele-Sales",
-      description:
-        "Phone-based prospecting designed to qualify leads and accelerate sales.",
-      features: [
-        "Call Scripts",
-        "Trained Agents",
-        "Lead Qualification",
-        "Call Reporting",
-      ],
-    },
+      eligibility: [],
 
-    {
-      title: "SMS Marketing",
-      description: "High-deliverability promotional and engagement campaigns.",
-      features: [
-        "Bulk SMS",
-        "Transactional SMS",
-        "Delivery Tracking",
-        "Compliance Management",
+      conditions: [
+        "Target audience approval required",
+        "Platform compliance maintained",
       ],
     },
   ],

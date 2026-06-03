@@ -91,6 +91,15 @@ import gallery8 from "./gallery/gallery8.webp";
 import gallery9 from "./gallery/gallery9.webp";
 import gallery10 from "./gallery/gallery10.webp";
 import heroVideo from "./Home/digital-agency-kolkata-hero-v01.webm";
+import webapp from "./services/web-development.jpg";
+import digitalmarketing from "./services/digital-marketing.jpg";
+import socialmedia from "./services/social-media-marketing.jpg";
+
+export const service_images = {
+  webapp,
+  digitalmarketing,
+  socialmedia,
+};
 
 export const gallery_images = [
   gallery1,
