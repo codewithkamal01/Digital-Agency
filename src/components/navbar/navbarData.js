@@ -1,35 +1,36 @@
 export const serviceSections = [
   {
-    title: "Development",
+    title: "Web Development",
     items: [
       {
-        title: "Web Development",
+        title: "Starter Business Presence ",
         packages: ["Starter", "Business"],
+        href: "/services/web-app",
       },
       {
-        title: "Mobile Apps",
-        packages: ["Basic App", "MVP"],
+        title: "CMS-Based Scalable Site",
+        packages: ["CMS Pro", "CMS Scale"],
+        href: "/services/web-app",
       },
       {
-        title: "SaaS Platforms",
-        packages: ["Launch", "Growth"],
+        title: "Full-Stack Scalable System",
+        packages: ["Growth", "Enterprise"],
+        href: "/services/web-app",
       },
     ],
   },
   {
-    title: "Design",
+    title: "Marketing",
     items: [
       {
-        title: "UI/UX Design",
-        packages: ["Wireframes", "App Design"],
+        title: "Digital Marketing",
+        packages: ["SEO + GAEO Optimization", "Local SEO & Visibility"],
+        href: "/services/digital-marketing",
       },
       {
-        title: "Brand Identity",
-        packages: ["Logo Design", "Brand Kit"],
-      },
-      {
-        title: "Motion Graphics",
-        packages: ["2D Animation", "Reels"],
+        title: "Social Media Marketing ",
+        packages: ["Content Creation", "Advertising"],
+        href: "/services/social-media-marketing",
       },
     ],
   },

@@ -1,6 +1,7 @@
 import MegaMenuSection from "./MegaMenuSection";
 import NavDropdown from "./NavDropdown";
 import { serviceSections } from "./navbarData";
+import { Link } from "react-router-dom";
 
 function NavLinks({ activeMenu, setActiveMenu }) {
   return (
@@ -30,8 +31,8 @@ function NavLinks({ activeMenu, setActiveMenu }) {
               Create premium digital experiences.
             </h2>
 
-            <a
-              href="#contact-us"
+            <Link
+              to="/contact-us"
               className="
                 mt-6
                 inline-flex
@@ -46,7 +47,7 @@ function NavLinks({ activeMenu, setActiveMenu }) {
               "
             >
               Start Project
-            </a>
+            </Link>
           </div>
         </div>
       </NavDropdown>
