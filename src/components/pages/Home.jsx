@@ -9,7 +9,7 @@ import TrustedBy from "../home/TrustedBy";
 import EngagementModels from "../home/EngagementModels";
 import SpecialityCard from "../home/SpecialityCard";
 import BuiltInAssurances from "../home/BuiltInAssurances";
-import TechnologyStack from "../home/TechnologyStack.jsx";
+import TechnologyStack from "../home/TechnologyStack";
 
 function Home() {
   return (

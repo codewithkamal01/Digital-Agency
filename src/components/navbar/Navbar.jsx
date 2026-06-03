@@ -109,7 +109,7 @@ function Navbar({ theme, setTheme }) {
           >
             About Us
           </NavLink>
-           <NavLink
+          <NavLink
             to="/career"
             onClick={handleScrollTop}
             className={({ isActive }) =>
@@ -121,9 +121,9 @@ function Navbar({ theme, setTheme }) {
       `
             }
           >
-           Career
+            Career
           </NavLink>
-           <NavLink
+          <NavLink
             to="/contact-us"
             onClick={handleScrollTop}
             className={({ isActive }) =>
@@ -135,9 +135,8 @@ function Navbar({ theme, setTheme }) {
       `
             }
           >
-           Contact Us
+            Contact Us
           </NavLink>
-        
         </div>
 
         {/* Mobile Nav */}
