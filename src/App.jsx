@@ -8,10 +8,12 @@ import ContactUs from "./components/pages/ContactUs";
 import WebDevelopment from "./components/pages/services/WebDevelopment";
 import DigitalMarketing from "./components/pages/services/DigitalMarketing";
 import SocialMediaMarketing from "./components/pages/services/SocialMediaMarketing";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <BrowserRouter>
+    <Toaster position="top-right" />;
       <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
