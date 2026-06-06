@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Check,
@@ -106,8 +107,31 @@ function ServicePackages({ data }) {
     },
   };
 
+  const location = useLocation();
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const packageId = location.hash.replace("#", "");
+
+    const matchedPackage = data.plans.find((plan) => plan.id === packageId);
+
+    if (matchedPackage) {
+      setActive(matchedPackage);
+
+      setTimeout(() => {
+        document.getElementById("packages")?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  }, [location.hash, data.plans]);
+
   return (
-    <section className="relative px-4 py-16 sm:px-8 lg:px-16 xl:px-24 bg-gradient-to-b from-transparent via-primary/5 to-transparent overflow-hidden">
+    <section
+      id="packages"
+      className="relative px-4 py-16 sm:px-8 lg:px-16 xl:px-24 bg-gradient-to-b from-transparent via-primary/5 to-transparent overflow-hidden"
+    >
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-20" />
@@ -212,7 +236,10 @@ function ServicePackages({ data }) {
               return (
                 <motion.button
                   key={plan.id}
-                  onClick={() => setActive(plan)}
+                  onClick={() => {
+                    setActive(plan);
+                    window.history.replaceState(null, "", `#${plan.id}`);
+                  }}
                   whileTap={{ scale: 0.98 }}
                   className={`
             relative
@@ -506,7 +533,9 @@ function ServicePackages({ data }) {
               "
                         />
 
-                        <span className="text-sm dark:text-text-light">{item}</span>
+                        <span className="text-sm dark:text-text-light">
+                          {item}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -590,8 +619,6 @@ function ServicePackages({ data }) {
                         </p>
                       </div>
                     </div>
-
-                    
                   </div>
 
                   {/* Content */}
@@ -631,7 +658,7 @@ function ServicePackages({ data }) {
                 </motion.div>
               ))}
             </motion.div>
-            
+
             {/* CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -648,7 +675,7 @@ function ServicePackages({ data }) {
                 </p>
               </div>
               <motion.a
-              href="/contact-us"
+                href="/contact-us"
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex-shrink-0 px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 flex items-center gap-2 group"

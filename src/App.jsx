@@ -20,7 +20,7 @@ function App() {
           <Route path="/career" element={<Career />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route
-            path="/services/web-app"
+            path="/services/web-development"
             element={<WebDevelopment />}
           />
           <Route

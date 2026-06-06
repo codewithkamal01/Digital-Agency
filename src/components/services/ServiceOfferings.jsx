@@ -1,9 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Check, ArrowRight } from "lucide-react";
 
 function ServiceOfferings({ offerings }) {
-  const [active, setActive] = useState(offerings[0] || {});
+  const location = useLocation();
+  const [active, setActive] = useState(() => {
+    const matchedOffer = offerings.find(
+      (offer) => `#${offer.id}` === location.hash
+    );
+
+    return matchedOffer || offerings[0] || {};
+  });
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const matchedOffer = offerings.find(
+      (offer) => `#${offer.id}` === location.hash
+    );
+
+    if (matchedOffer && matchedOffer.id !== active.id) {
+      setActive(matchedOffer);
+    }
+  }, [location.hash, offerings, active.id]);
 
   return (
     <section className="px-4 py-24 sm:px-8 lg:px-16 xl:px-24">
@@ -28,28 +48,29 @@ function ServiceOfferings({ offerings }) {
 
           <div className="space-y-3 dark:text-text-light">
             {offerings.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => setActive(item)}
-                className={`
-                  w-full
-                  rounded-2xl
-                  border
-                  p-5
-                  text-left
-                  transition-all
+              <div key={item.id}>
+                <button
+                  onClick={() => setActive(item)}
+                  className={`
+                    w-full
+                    rounded-2xl
+                    border
+                    p-5
+                    text-left
+                    transition-all
 
-                  ${
-                    active.id === item.id
-                      ? "border-primary bg-primary/5"
-                      : "border-border-light hover:border-primary/20"
-                  }
-                `}
-              >
-                <h3 className="font-semibold">{item.title}</h3>
+                    ${
+                      active.id === item.id
+                        ? "border-primary bg-primary/5"
+                        : "border-border-light hover:border-primary/20"
+                    }
+                  `}
+                >
+                  <h3 className="font-semibold">{item.title}</h3>
 
-                <p className="mt-2 text-sm text-text-secondary">{item.badge}</p>
-              </button>
+                  <p className="mt-2 text-sm text-text-secondary">{item.badge}</p>
+                </button>
+              </div>
             ))}
           </div>
 

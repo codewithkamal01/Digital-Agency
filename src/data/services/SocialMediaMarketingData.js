@@ -557,9 +557,9 @@ export const socialMediaPackages = {
     },
 
     {
-      id: "scale-authority-plan",
+      id: "scale-revenue-acquisition-system",
 
-      name: "Scale & Authority Plan",
+      name: "Scale & Revenue Acquisition Plan",
 
       badge: "Full Funnel Growth",
 
