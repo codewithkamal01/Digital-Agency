@@ -2,15 +2,24 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Check,
-  ArrowRight,
+  Layers,
+  Sparkles,
+  Search,
+  Bot,
+  PenTool,
+  Users,
+  Megaphone,
+  Send,
+  Package,
+  BarChart3,
+  TrendingUp,
   Zap,
   Target,
-  Settings,
-  BarChart3,
-  Award,
-  TrendingUp,
-  CheckCircle2,
   ShieldCheck,
+  CheckCircle2,
+  Award,
+  Settings,
+  ArrowRight,
 } from "lucide-react";
 
 function ServicePackages({ data }) {
@@ -19,7 +28,6 @@ function ServicePackages({ data }) {
   }
 
   const [active, setActive] = useState(data.plans[0]);
-  const [expandedSections, setExpandedSections] = useState({});
 
   // Dynamically determine which sections to show based on active plan
   const getSections = () => {
@@ -61,6 +69,21 @@ function ServicePackages({ data }) {
       Support: <Settings className="w-5 h-5" />,
     };
     return iconMap[title] || <Check className="w-5 h-5" />;
+  };
+
+  const sectionVisuals = {
+    "Core Services": <Layers className="h-24 w-24 lg:h-32 lg:w-32" />,
+    Features: <Sparkles className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "SEO Services": <Search className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "GEO Services": <Bot className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "Content Services": <PenTool className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "Management Services": <Users className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "Advertising Services": <Megaphone className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "Outreach Services": <Send className="h-24 w-24 lg:h-32 lg:w-32" />,
+    Deliverables: <Package className="h-24 w-24 lg:h-32 lg:w-32" />,
+    Reporting: <BarChart3 className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "Expected Outcomes": <TrendingUp className="h-24 w-24 lg:h-32 lg:w-32" />,
+    "Ideal For": <Target className="h-24 w-24 lg:h-32 lg:w-32" />,
   };
 
   const containerVariants = {
@@ -353,6 +376,7 @@ function ServicePackages({ data }) {
           leading-tight
           text-foreground
           lg:text-4xl
+          dark:text-text-light
         "
                   >
                     {active.name}
@@ -478,10 +502,11 @@ function ServicePackages({ data }) {
                 mt-0.5
                 shrink-0
                 text-primary
+      
               "
                         />
 
-                        <span className="text-sm">{item}</span>
+                        <span className="text-sm dark:text-text-light">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -494,167 +519,119 @@ function ServicePackages({ data }) {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="grid gap-5 lg:grid-cols-2"
+              className="grid grid-cols-1 gap-6 lg:grid-cols-2"
             >
-              {sections.map((section, index) => (
+              {sections.map((section) => (
                 <motion.div
                   key={section.title}
                   variants={itemVariants}
                   className="
-        group
-        relative
-        overflow-hidden
-        rounded-[28px]
-        border
-        border-primary/10
-        bg-gradient-to-br
-        from-white
-        via-white
-        to-primary/5
-        p-6
-        transition-all
-        duration-300
-        hover:-translate-y-1
-        hover:border-primary/30
-        hover:shadow-xl
-        dark:from-secondary
-        dark:via-secondary
-        dark:to-primary/10
-      "
+                
+    group
+    relative
+    overflow-hidden
+    rounded-[32px]
+    border
+    border-primary/10
+    bg-gradient-to-br
+    from-white
+    via-white
+    to-primary/5
+    p-6
+    hover:border-primary/30
+    hover:shadow-xl
+    transition-all
+    dark:from-secondary
+    dark:via-secondary
+    dark:to-primary/10
+  "
                 >
-                  {/* Background Glow */}
+                  {/* Decorative Illustration */}
                   <div
                     className="
-          absolute
-          -right-10
-          -top-10
-          h-32
-          w-32
-          rounded-full
-          bg-primary/10
-          blur-3xl
-          transition-all
-          duration-500
-          group-hover:bg-primary/20
-        "
-                  />
+    absolute
+    right-4
+    top-4
+    text-primary/10
+    pointer-events-none
+    transition-all
+    duration-500
+    group-hover:text-primary/20
+  "
+                  >
+                    {sectionVisuals[section.title]}
+                  </div>
 
                   {/* Header */}
-                  <div className="relative z-10 flex items-start justify-between">
+                  <div className="relative z-10 flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div
                         className="
-              flex
-              h-14
-              w-14
-              items-center
-              justify-center
-              rounded-2xl
-              bg-primary/10
-              text-primary
-              transition-all
-              duration-300
-              group-hover:bg-primary
-              group-hover:text-white
-            "
+          flex
+          h-14
+          w-14
+          items-center
+          justify-center
+          rounded-2xl
+          bg-primary/10
+          text-primary
+        "
                       >
                         {getIconForSection(section.title)}
                       </div>
 
                       <div>
-                        <h4
-                          className="
-                text-lg
-                font-semibold
-                text-foreground
-              "
-                        >
+                        <h4 className="text-lg font-semibold dark:text-text-light">
                           {section.title}
                         </h4>
 
-                        <p
-                          className="
-                mt-1
-                text-sm
-                text-text-secondary
-              "
-                        >
+                        <p className="text-sm text-text-secondary">
                           {section.items.length} included
                         </p>
                       </div>
                     </div>
 
-                    <div
-                      className="
-            rounded-full
-            bg-primary/10
-            px-3
-            py-1
-            text-xs
-            font-semibold
-            text-primary
-          "
-                    >
-                      {String(index + 1).padStart(2, "0")}
-                    </div>
+                    
                   </div>
 
-                  {/* Divider */}
-                  <div
-                    className="
-          my-5
-          h-px
-          w-full
-          bg-gradient-to-r
-          from-primary/20
-          to-transparent
-        "
-                  />
-
                   {/* Content */}
-                  <div className="relative z-10">
-                    <div className="grid gap-3">
-                      {section.items.map((item, idx) => (
+                  <div className="relative z-10 mt-6">
+                    <div className="flex flex-wrap gap-2">
+                      {section.items.slice(0, 8).map((item) => (
                         <div
-                          key={idx}
+                          key={item}
                           className="
-                flex
-                items-start
-                gap-3
-              "
+            flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            border-primary/10
+            bg-white/70
+            px-3
+            py-2
+            text-sm
+            dark:bg-secondary/70
+            dark:text-text-light
+          "
                         >
-                          <div
-                            className="
-                  mt-1
-                  flex
-                  h-5
-                  w-5
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-primary/10
-                "
-                          >
-                            <Check size={12} className="text-primary" />
-                          </div>
+                          <Check size={14} className="text-primary" />
 
-                          <span
-                            className="
-                  text-sm
-                  leading-relaxed
-                  text-text-secondary
-                "
-                          >
-                            {item}
-                          </span>
+                          <span>{item}</span>
                         </div>
                       ))}
                     </div>
+
+                    {section.items.length > 8 && (
+                      <div className="mt-4 text-sm font-medium text-primary">
+                        +{section.items.length - 8} more included
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
             </motion.div>
-
+            
             {/* CTA Section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -663,21 +640,22 @@ function ServicePackages({ data }) {
               className="mt-12 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 dark:border-primary/40 flex flex-col sm:flex-row items-center justify-between gap-6"
             >
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2 dark:text-text-light">
                   Ready to get started?
                 </h3>
                 <p className="text-text-secondary">
                   Let's discuss how {active.name} can drive your growth
                 </p>
               </div>
-              <motion.button
+              <motion.a
+              href="/contact-us"
                 whileHover={{ scale: 1.05, x: 5 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex-shrink-0 px-8 py-4 bg-primary text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 flex items-center gap-2 group"
               >
                 <span>Get Started</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
         </AnimatePresence>
